@@ -58,6 +58,50 @@
     li {
         margin-top: 10px;
     }
+
+    footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .buttons {
+        text-align: right;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .buttons-visualizacao {
+        font-size: 20px;
+        color: rgb(35, 34, 44);
+        margin-left: 10px;
+    }
+
+    .modo-grade {
+        padding-top: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .modo-grade section {
+        width: 40%;
+    }
 </style>
 <body>
     <header>
@@ -69,7 +113,12 @@
         </p>
     </header>
 
-    <main>
+     <div class="buttons">
+        <button class="buttons-visualizacao" onclick="mudarGrade()">Visualização Grade</button>
+        <button class="buttons-visualizacao" onclick="mudarLista()">Visualização Lista</button>
+     </div>
+
+    <main id="principal">
         <section>
             <h2>
                 Minhas Habilidades
@@ -113,18 +162,32 @@
             </h2>
             <ul>
                 <li>
-                    <a href="">E-mail: moises.filho@docente.senai.br</a>
+                    <a href="mailto:moises.filho@docente.senai.br">E-mail: moises.filho@docente.senai.br</a>
                 </li>
                 <li>
-                    <a href="">Linkedin</a>
+                    <a href="https://linkedin.com" target="_blank">Linkedin</a>
                 </li>
                 <li>
-                    <a href="">Github</a>
+                    <a href="https://github.com/olimpiodev-tec/" target="_blank">Github</a>
                 </li>
             </ul>
         </section>
 
-
     </main>
+
+    <footer>
+        &copy; 2025 Moisés. Todos os direitos reservados.
+    </footer>
 </body>
+<script>
+    function mudarGrade() {
+        const principal = document.getElementById('principal')
+        principal.classList.add('modo-grade')
+    }
+
+    function mudarLista() {
+        const principal = document.getElementById('principal')
+        principal.classList.remove('modo-grade')
+    }
+</script>
 </html>
